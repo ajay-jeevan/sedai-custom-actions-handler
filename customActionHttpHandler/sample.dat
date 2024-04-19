@@ -1,0 +1,30 @@
+{
+    "wiriStateResourceDetails": {
+        "type": "VMAppConfigState",
+        "resourceId": "fxlvyd0z/app/alertmanager-operated",
+        "regionId": "fxlvyd0z/unknown_region",
+        "instanceDetails": [
+            {
+                "instanceId": "fxlvyd0z/instance/alertmanager-operated/prometheus-kube-stat",
+                "sizeType": null
+            }
+        ]
+    },
+    "wisbStateResourceDetails": {
+        "type": "VMAppConfigState",
+        "resourceId": "fxlvyd0z/app/alertmanager-operated",
+        "regionId": "fxlvyd0z/unknown_region",
+        "instanceDetails": [
+            {
+                "instanceId": "fxlvyd0z/instance/alertmanager-operated/prometheus-kube-stat",
+                "sizeType": "test111"
+            }
+        ]
+    },
+    "sedaiOperationUuid": "4fd716de-5df4",
+    "sedaiRequestId": "4fd716de-5df4_REPLACE",
+    "proposedAction": {
+        "actionName": "REPLACE",
+        "step": "PRE_ACTIONS"
+    }
+}
