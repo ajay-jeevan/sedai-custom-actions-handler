@@ -16,7 +16,7 @@ def performAction():
 
     headers = {
         "Content-Type": "application/json",
-        "X-Auth-Token": os.getenv("KEY")
+        "St2-Api-Key": os.getenv("KEY")
     }
 
     payload = {
