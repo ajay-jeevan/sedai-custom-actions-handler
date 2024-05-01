@@ -1,16 +1,32 @@
 from flask import Flask, jsonify, request
+import json
+import os
 import requests
 import logging
 
 app = Flask(__name__)
 
+workflow_auto_url = os.getenv('URL', default="https://wms-stackstorm-dev.runops.ohlogistics.com/api/v1/executions")
+
 @app.route("/performAction", methods=['POST'])
 def performAction():
 
-    workflow_auto_url = 'https://rngnbyyii56mqwsffdwlnkwawq0zxjfd.lambda-url.us-east-1.on.aws/'
+    request_json = request.json
+    action_name = request_json.get('proposedAction').get('actionName')
 
-    response = requests.post(workflow_auto_url, json=request.json)
+    headers = {
+        "Content-Type": "application/json",
+        "X-Auth-Token": os.getenv("KEY")
+    }
 
+    payload = {
+        "action": action_name,
+         "parameters": {
+        "hostvalue": "Sedai"
+        }
+    }
+
+    response = requests.post(workflow_auto_url, json=payload, headers=headers)
 
     if response.status_code == 200:
         processed_data = response.json()
