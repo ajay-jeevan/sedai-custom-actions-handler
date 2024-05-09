@@ -13,7 +13,7 @@ def performAction():
 
     request_json = request.json
     action_name = request_json.get('proposedAction').get('actionName')
-    host_name = request_json.get('resourceActionDetails').get('instanceDetails').get('instanceId')
+    host_name = request_json.get('resourceActionDetails').get('instanceDetails')[0].get('instanceId')
 
     headers = {
         "Content-Type": "application/json",
